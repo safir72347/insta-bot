@@ -53,11 +53,12 @@ class Instabot:
         print("No of Following : ", len(following))
         print("No of followers : ", len(followers))
         print("No of Unfollowers : ", len(not_following_back))
-        print(not_following_back)
+        #print(not_following_back)
 
     def get_names(self):
         sleep(4)
         scroll_box = self.driver.find_element_by_xpath("/html/body/div[4]/div/div/div[2]")
+        sleep(4)
         last_ht, ht = 0, 1
         linkslist = []
         while last_ht != ht:
