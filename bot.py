@@ -28,6 +28,7 @@ class Instabot:
         for i in following:
             if i!='':
                 f.write(i)
+                f.write("\n")
         f.close()
         sleep(5)
         #sugs = self.driver.find_element_by_xpath('//h4[contains(text(), Suggestions)]')
@@ -38,6 +39,7 @@ class Instabot:
         for i in followers:
             if i!='':
                 f.write(i)
+                f.write("\n")
         f.close()
         sleep(5)
         not_following_back = [user for user in following if user not in followers]
@@ -45,6 +47,7 @@ class Instabot:
         for i in not_following_back:
             if i!='':
                 f.write(i)
+                f.write("\n")
         f.close()
         sleep(5)
         print("No of Following : ", len(following))
@@ -80,4 +83,4 @@ if __name__=='__main__':
     username = ld.get_username()
     password = ld.get_password()
     my_bot = Instabot(username, password)
-    #my_bot.get_unfollowers()
+    my_bot.get_unfollowers()
