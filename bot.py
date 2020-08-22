@@ -23,7 +23,7 @@ class Instabot:
         self.driver.find_element_by_xpath("//a[contains(@href, '/{}/')]".format(self.username)).click()
         sleep(2)
         self.driver.find_element_by_xpath("//a[contains(@href, '/following')]").click()
-        following = self.get_names()
+        following = list(set(self.get_names()))
         f= open("insta_following.txt","w+")
         for i in following:
             if i!='':
@@ -34,7 +34,7 @@ class Instabot:
         #sugs = self.driver.find_element_by_xpath('//h4[contains(text(), Suggestions)]')
         #self.driver.execute_script('arguments[0].scrollIntoView()', sugs)
         self.driver.find_element_by_xpath("//a[contains(@href, '/followers')]").click()
-        followers = self.get_names()
+        followers = list(set(self.get_names()))
         f= open("insta_followers.txt","w+")
         for i in followers:
             if i!='':
